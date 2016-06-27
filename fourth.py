@@ -82,12 +82,13 @@ class SpaceX(object):
     def launch_all(self):
         for rocket in self.rockets:
             rocket.launch()
+        self.launch += len(self.rockets)
 
     def buy_fuel(self, amount):
         self.stored_fuel += amount
 
     def getStats(self):
-        return 'rockets: ' + str(self.rockets) + ', ' + 'fuel: ' + str(self.stored_fuel) + ', ' + 'launches: ' + str(self.launch_all)
+        return 'rockets: ' + str(len(self.rockets)) + ', ' + 'fuel: ' + str(self.stored_fuel) + ', ' + 'launches: ' + str(self.launch)
 
 
 space_x = SpaceX(100)
